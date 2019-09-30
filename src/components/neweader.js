@@ -44,7 +44,7 @@ export default function Header() {
           <Link  to="/services">Services</Link>
           <Link  to="/about">about</Link>
           <Link  to="/login">Account login</Link>
-          <Link  to="/profile">profile</Link>
+          
         </nav>
       </CSSTransition>
       <img onClick={toggleNav} className="Burger" src={ic}/>
