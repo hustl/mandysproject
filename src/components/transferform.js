@@ -10,7 +10,7 @@ import Header from "../components/neweader"
 import '../components/layout.css'
 import  ResponsiveDialog from '../components/dialog'
 
-
+var store = require('store')
 const windowGlobal = typeof window !== 'undefined' && window
 const accounts = [{firstName:"Sam", lastName:"Frederick", account :'46210999'},
 {firstName:"Oliver", lastName:"Dominic", account:'41376656'},
