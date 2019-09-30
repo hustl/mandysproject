@@ -11,7 +11,7 @@ import '../components/layout.css'
 import  ResponsiveDialog from '../components/dialog'
 
 
-const windowGlobal = typeof window !== 'undefined' && window
+
 const accounts = [{firstName:"Sam", lastName:"Frederick", account :'46210999'},
 {firstName:"Oliver", lastName:"Dominic", account:'41376656'},
 {firstName:"Alexander", lastName:"Yurnimov", account :'53866401'},
@@ -112,7 +112,7 @@ const ValidatedLoginForm = () => (
         if (window.confirm('Are you sure you wish to send ' +values.amount +' USD to \n '+values.account +'\n '+ fullname
         )){
         postdata(values.amount,fullname)
-        updatebalance(windowGlobal.localStorage.getItem('rememberMe'),values.amount)
+        updatebalance(localStorage.getItem('rememberMe'),values.amount)
         }}
 
       }, 500);
