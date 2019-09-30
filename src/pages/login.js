@@ -20,7 +20,7 @@ const ValidatedLoginForm = () => (
         console.log("Logging in", values);
         setSubmitting(false);
         if((values.email==='ernstingrise@gmail.com')&&(values.password==='ern0943sting'))
-        navigate('/about/');
+        navigate('/profile/');
         else
         console.log("error",);
       }, 500);
