@@ -10,7 +10,7 @@ import Header from "../components/neweader"
 import '../components/layout.css'
 import  ResponsiveDialog from '../components/dialog'
 
-var store = require('store')
+var store = require('store2')
 const windowGlobal = typeof window !== 'undefined' && window
 const accounts = [{firstName:"Sam", lastName:"Frederick", account :'46210999'},
 {firstName:"Oliver", lastName:"Dominic", account:'41376656'},
@@ -113,7 +113,7 @@ const ValidatedLoginForm = () => (
         )){
         postdata(values.amount,fullname)
        
-        updatebalance(store.get('rememberme').number,values.amount)
+        updatebalance(store('rememberme'),values.amount)
         }}
 
       }, 500);
