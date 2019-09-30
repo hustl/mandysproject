@@ -1,8 +1,8 @@
 ---
 path: "/post-four"
 date: "2019-09-08"
-title: "vois fundraiser"
-author: "vois"
+title: "+52,098,00USD"
+author: "Miles Jonathan"
 ---
 
 The occasion of World Refugee Day, “Better Together” event took place on 21 June 2019 in Nicosia, Lefkeliler Inn. Throughout the event we stood against racism and the notion that it is not possible to live together; we said out loud that WE ARE BETTER TOGETHER!

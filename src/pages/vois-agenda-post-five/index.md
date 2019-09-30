@@ -1,8 +1,8 @@
 ---
 path: "/post-five"
 date: "2019-09-09"
-title: "vois fundraiser"
-author: "vois"
+title: "+200,000.00 USD"
+author: "Maya Samuel"
 ---
 
 The occasion of World Refugee Day, “Better Together” event took place on 21 June 2019 in Nicosia, Lefkeliler Inn. Throughout the event we stood against racism and the notion that it is not possible to live together; we said out loud that WE ARE BETTER TOGETHER!

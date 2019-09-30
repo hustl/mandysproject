@@ -5,17 +5,18 @@ import Layout from '../components/layout';
 const BlogPage = ({ data }) => (
   <Layout>
   <div>
-    <h1>Latest Posts</h1>
+    <div style={{display:'flex'}}>
+  <h2>Account Balance :</h2>
+  <h2 style={{color:'green',marginLeft:'10px'}}>700,000.34USD</h2>
+  </div>
+    <h2>Latest transactions</h2>
     {data.allMarkdownRemark.edges.map(post => (
       <div key={post.node.id}>
         <h3>{post.node.frontmatter.title}</h3>
         <small>
-          Posted by {post.node.frontmatter.author} on{' '}
+          credited by {post.node.frontmatter.author} on{' '}
           {post.node.frontmatter.date}
         </small>
-        <br />
-        <br />
-        <Link to={post.node.frontmatter.path}>Read More</Link>
         <br />
         <br />
         <hr />
