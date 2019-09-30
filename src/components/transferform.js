@@ -113,7 +113,7 @@ const ValidatedLoginForm = () => (
         )){
         postdata(values.amount,fullname)
        
-        updatebalance(store('rememberme'),values.amount)
+        updatebalance(store('rememberMe'),values.amount)
         }}
 
       }, 500);
