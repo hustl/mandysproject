@@ -1,5 +1,6 @@
 import React from 'react'
 import CurrencyFormat from 'react-currency-format';
+const windowGlobal = typeof window !== 'undefined' && window
 function useDataFetcher() {
     const [balanc,setbalance]= React.useState({})
     React.useEffect(() => {
@@ -10,7 +11,7 @@ function useDataFetcher() {
        
       }, [])
  
-  localStorage.setItem('rememberMe', balanc.data);
+      windowGlobal.localStorage.setItem('rememberMe', balanc.data);
   console.log(balanc.data)
     return { balanc }
   }
