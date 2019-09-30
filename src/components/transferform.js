@@ -44,7 +44,7 @@ const updatebalance = async (currentamount,deducter) =>{
     console.log(result);
    
 
- windowGlobal.location.reload();
+    windowGlobal.location.reload();
   }
 
   
@@ -112,7 +112,8 @@ const ValidatedLoginForm = () => (
         if (window.confirm('Are you sure you wish to send ' +values.amount +' USD to \n '+values.account +'\n '+ fullname
         )){
         postdata(values.amount,fullname)
-        updatebalance(localStorage.getItem('rememberMe'),values.amount)
+       
+        updatebalance(store.get('remember me').number,values.amount)
         }}
 
       }, 500);

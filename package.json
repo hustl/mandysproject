@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-transformer-remark": "^2.6.21",
     "gatsby-transformer-sharp": "^2.2.7",
+    "local-storage": "^2.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
@@ -45,6 +46,7 @@
     "react-ui-cards": "^2.0.0",
     "reactstrap": "^8.0.1",
     "slick-carousel": "^1.8.1",
+    "store": "^2.0.12",
     "styled-components": "^4.3.2",
     "yup": "^0.27.0"
   },
