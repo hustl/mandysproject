@@ -30,32 +30,47 @@ const IndexPage = () => {
   borderRadius: '5px'}}/></div>
      <Row>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
         
           <CardTitle><h5>Build your crypto portfolio with automated quant trading</h5></CardTitle>
-          
-          <img width="250px" src={mypic} alt="Card image cap" />
-         
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={mypic} alt="Card image cap" /></div>
+        
        
           <CardText> Different types of investments involve varying degrees of risk, and there can be no assurance that the future performance of any specific investment, investment strategy, or product will be profitable, equal any corresponding indicated historical performance level(s). </CardText>
-          <Button>Learn More</Button>
+          <Link to='/content' state={{title:'Build Your Crypto Portfolio With Automated Quant Trading',
+        img:mypic,
+        desc:' Different types of investments involve varying degrees of risk, and there can be no assurance that the future performance of any specific investment, investment strategy, or product will be profitable, equal any corresponding indicated historical performance level(s). We assess this risk factors so you dont have to '}} >Learn More</Link>
         </Card>
+        </div>  
       </Col>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
           <CardTitle><h5>Offshore Bank Account</h5></CardTitle>
-          <img width="250px" src={offshorepic} alt="Card image cap" />
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={offshorepic} alt="Card image cap" /></div>
+         
           <CardText>We can save you hours of research and the uncertainty involved with selecting a foreign bank. With our experience, we can select the countries and banks that make the most sense for your situation and banking requirements..</CardText>
           <Button>Learn More</Button>
         </Card>
+        </div>
       </Col>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
           <CardTitle><h5>Traditional Savings</h5></CardTitle>
-          <img width="250px" src={save} alt="Card image cap" />
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={save} alt="Card image cap" /></div>
+         
           <CardText>The Traditional Savings Account is the ideal choice for those of you who are still following the tradition! Deposit and withdraw money whenever you want, without giving prior notice, and at your own pace.</CardText>
           <Button>Learn More</Button>
         </Card>
+        </div>
       </Col>
       
      
@@ -69,7 +84,9 @@ const IndexPage = () => {
           <CardTitle><h5>Saave Money on Health Insurance</h5></CardTitle>
           <div style={{margin:'0 auto',textAlign:'center'
     }}>
-          <img width="250px" src={health} alt="Card image cap" />
+      <div style={{margin:'0 auto'
+    }}> <img width="250px" src={health} alt="Card image cap" /></div>
+         
           </div>
          
        
@@ -95,13 +112,18 @@ Preventive Care: The Medicare Annual Wellness Visit
         </div>
       </Col>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
           <CardTitle><h5>Stocks Continue Bobbing on Central Bank Decisions
 </h5></CardTitle>
-          <img width="250px" src={stock} alt="Card image cap" />
+<div style={{margin:'0 auto'
+    }}> <img width="250px" src={stock} alt="Card image cap" /></div>
+         
           <CardText>Wealth Dailies rounds up overnight markets with Market Snapshot, Macro Strategy, Singapore Stock Pulse, and Regional Morning Pack.</CardText>
           <Button>learn More</Button>
         </Card>
+        </div>
       </Col>
      <div style={{margin:'0 auto'
     }}><h5 >INITIATIVES</h5>
@@ -110,45 +132,67 @@ Preventive Care: The Medicare Annual Wellness Visit
       
       <Row>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
         
           <CardTitle>Early Savers Account</CardTitle>
-          
-          <img width="250px" src={es} alt="Card image cap" />
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={es} alt="Card image cap" /></div>
+         
          
        
           <CardText>t’s never too early to learn the value of saving. Early Savers is a savings account designed especially for children below the age of 18 years, including unborn children.
  </CardText>
           <Button>Learn More</Button>
         </Card>
+        </div>
       </Col>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
         
           <CardTitle>Special Title Treatment</CardTitle>
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={mypic} alt="Card image cap" /></div>
           
-          <img width="250px" src={mypic} alt="Card image cap" />
          
        
           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
           <Button>Go somewhere</Button>
         </Card>
+        </div>
+        </div>
       </Col>
+      
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
           <CardTitle>Special Title Treatment</CardTitle>
-          <img width="250px" src={mypic} alt="Card image cap" />
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={mypic} alt="Card image cap" /></div>
+          
           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
           <Button>Go somewhere</Button>
         </Card>
+        </div>
       </Col>
       <Col sm="4">
+      <div style={{margin:'0 auto',textAlign:'center'
+    }}>
         <Card body>
           <CardTitle>Special Title Treatment</CardTitle>
-          <img width="250px" src={mypic} alt="Card image cap" />
+          <div style={{margin:'0 auto'
+    }}> <img width="250px" src={mypic} alt="Card image cap" /></div>
+          
           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
           <Button>Go somewhere</Button>
         </Card>
+        </div>
       </Col>
       
      
@@ -165,5 +209,5 @@ Preventive Care: The Medicare Annual Wellness Visit
     </Layout>
   )
 }
-
+export {mypic}
 export default IndexPage

@@ -117,6 +117,7 @@ const ValidatedLoginForm = () => (
         }}
 
       }, 500);
+      console.log(store('rememberMe'))
     }}
     
     //********Handling validation messages yourself*******/
