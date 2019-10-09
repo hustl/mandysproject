@@ -9,7 +9,7 @@ export default function content({location}) {
       <Layout/>
       
         <div style= {{textAlign:'center',marginLeft:'10px',marginRight:'10px'}}>
-        <h3>{location.state.title} </h3> 
+        <h3>{location.state.tite} </h3> 
          <hr/>
          <img  src={location.state.img} alt="Card image cap"  style={{width:'60%',maxHeight:'30vh',margin:'0 auto',boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}/>
          

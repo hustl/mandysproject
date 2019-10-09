@@ -40,7 +40,7 @@ const IndexPage = () => {
         
        
           <CardText> Different types of investments involve varying degrees of risk, and there can be no assurance that the future performance of any specific investment, investment strategy, or product will be profitable, equal any corresponding indicated historical performance level(s). </CardText>
-          <Link to='/content' state={{title:'Build Your Crypto Portfolio With Automated Quant Trading',
+          <Link to='/content' state={{tite:'Build Your Crypto Portfolio With Automated Quant Trading',
         img:mypic,
         desc:' Different types of investments involve varying degrees of risk, and there can be no assurance that the future performance of any specific investment, investment strategy, or product will be profitable, equal any corresponding indicated historical performance level(s). We assess this risk factors so you dont have to '}} >Learn More</Link>
         </Card>
