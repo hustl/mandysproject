@@ -24,7 +24,7 @@ export default function content({location}) {
   <div style={{background: 'black',
 border:'#8f6B29 2px solid',borderRadius:'10px',display:'flex',flexWrap:'true', alignItems: 'center',
 justifyContent: 'center',overflowWrap: 'break-word'
-}}><h2 style={{color:'white'}}>contactapexfinance@yandex.com </h2></div>
+}}><h5 style={{color:'white'}}>contactapexfinance@yandex.com </h5></div>
 </div>
       </div>
       <Footerstick/>
