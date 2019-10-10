@@ -22,7 +22,8 @@ export default function content({location}) {
 }}>
   <h2 style={{color:'black'}}>Contact US :</h2>
   <div style={{background: 'black',
-border:'#8f6B29 2px solid',borderRadius:'10px'
+border:'#8f6B29 2px solid',borderRadius:'10px',display:'flex',flexWrap:'true', alignItems: 'center',
+justifyContent: 'center',overflowWrap: 'break-word'
 }}><h2 style={{color:'white'}}>contactapexfinance@yandex.com </h2></div>
 </div>
       </div>
