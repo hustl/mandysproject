@@ -12,17 +12,18 @@ export default function content({location}) {
     <Layout/>
     
       <div style= {{textAlign:'center',marginLeft:'10px',marginRight:'10px'}}>
-      <h3>{title} </h3> 
+      <h3 style={{fontWeight:'bold'}}>{title} </h3> 
        <hr/>
        <img  src={img} alt="Card image cap"  style={{width:'60%',maxHeight:'30vh',margin:'0 auto',boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}/>
        
-       <p>{desc}</p>
+
+       <p style={{maxWidth:'60%',margin:'0 auto',paddingTop:'10px',font:'Times New Roman',fontStyle:'italic'}}>{desc}</p>
        <div style={{margin:'0 auto'
 }}>
   <h2 style={{color:'black'}}>Contact US :</h2>
   <div style={{background: 'black',
 border:'#8f6B29 2px solid',borderRadius:'10px'
-}}><h2 style={{color:'white'}}>contact@apexFinance.com </h2></div>
+}}><h2 style={{color:'white'}}>contactapexfinance@yandex.com </h2></div>
 </div>
       </div>
       <Footerstick/>
