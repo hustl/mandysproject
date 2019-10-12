@@ -44,7 +44,7 @@
     animation-delay: 8s;
     background-image: url('../images/insurancebanner.jpg');
     background-size: cover;
-    background-position: center;
+    background-position:-10px 0;
    }
    
    .slide p {
@@ -65,3 +65,36 @@
     30.0001% { left: -100%; width: 0%; }
     100% { left: 100%; width: 0%; }
    }
+   
+   @media screen and (max-width: 550px) {
+    .slide:nth-child(1){
+        left: 0%;
+        animation-delay: -1s;
+        background-image: url('../images/webb.jpg');
+        background-size: cover;
+        background-position: 5px 0;
+       }
+       
+       .slide:nth-child(2){
+        animation-delay: 2s;
+        background-image: url('../images/banner.jpg');
+        background-size: cover;
+       background-position: -255px 0;
+       }
+       
+       .slide:nth-child(3){
+        animation-delay: 5s;
+        background-image: url('../images/piggy.jpg');
+        background-size: cover;
+        background-position: -255px 0;
+       }
+       
+       .slide:nth-child(4){
+        left: 0%;
+        animation-delay: 8s;
+        background-image: url('../images/insurancebanner.jpg');
+        background-size: cover;
+        background-position:-450px 0;
+       }
+       
+}
