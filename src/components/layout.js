@@ -18,7 +18,7 @@ import mypic from '../images/webb.jpg'
  import save from '../images/save.jpg'
  import health from '../images/healthinsurance.jpg'
  import vet from '../images/gatsby-icon.png'
-
+import Slider from '../components/slider'
 
 
 
@@ -60,12 +60,14 @@ const Layout = ({ children }) => {
      
       <div   >
      <Header/>
-     <div   > <img src={mypic} alt="Card image cap"
-     style={{objectFit:'cover',width:'100%',height:'300px'}}/></div>
+     <Slider/>
+    { //<div   > <img src={mypic} alt="Card image cap"
+     //style={{objectFit:'cover',width:'100%',height:'300px'}}/></div>
     
-      </div>
-      
-      
+     
+    }
+     </div> 
+     
        <div
       style={{
         margin: '0 auto',
