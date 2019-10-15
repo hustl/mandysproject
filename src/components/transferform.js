@@ -9,7 +9,21 @@ import lit from '../images/lit.jpg'
 import Header from "../components/neweader"
 import '../components/layout.css'
 import  ResponsiveDialog from '../components/dialog'
+import { Toast, ToastBody, ToastHeader, Spinner } from 'reactstrap';
 
+async function delay(delayInms) {
+  return new Promise(resolve  => {
+    setTimeout(() => {
+      resolve(2);
+    }, delayInms);
+  });
+}
+async function sample() {
+  console.log('a');
+  console.log('waiting...')
+  let delayres = await delay(5000);
+  console.log('b');
+}
 var store = require('store2')
 const windowGlobal = typeof window !== 'undefined' && window
 const accounts = [{firstName:"Sam", lastName:"Frederick", account :'46210999'},
@@ -44,7 +58,7 @@ const updatebalance = async (currentamount,deducter) =>{
     console.log(result);
    
 
-    windowGlobal.location.reload();
+   
   }
 
   
@@ -87,36 +101,74 @@ const ValidatedLoginForm = () => (
 
   <Formik
  
-    initialValues={{ account: "", token: "" ,accountname:'',amount :0, alrt:false, 
+    initialValues={{ account: "", token: "" ,accountname:'',amount :0, alrt:false,isloading:'false',issuccessfull:false ,isfailed:false
    }}
     onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-       
-       
-        console.log("Logging in", values);
-        setSubmitting(false);
+
+      if(window.navigator.onLine){
         
-        if(window.navigator.onLine){
-         
 
-          for(let i=0;i<accounts.length;i++){
-            if(values.account===accounts[i].account){
-               fullname=accounts[i].firstName +' '+accounts[i].lastName
-              console.log(fullname);
-              //accounts[i].firstName+ ' ' + accounts[i].lastName
-              break
-            }
-            else fullname=''
-           
+        for(let i=0;i<accounts.length;i++){
+          if(values.account===accounts[i].account){
+             fullname=accounts[i].firstName +' '+accounts[i].lastName
+            console.log(fullname);
+            //accounts[i].firstName+ ' ' + accounts[i].lastName
+            break
           }
-        if (window.confirm('Are you sure you wish to send ' +values.amount +' USD to \n '+values.account +'\n '+ fullname
-        )){
-        postdata(values.amount,fullname)
+          else fullname=''
+         
+        }
+      if (window.confirm('Are you sure you wish to send ' +values.amount +' USD to \n '+values.account +'\n '+ fullname
+      )){
+        values.isloading='true'
+     
+      postdata(values.amount,fullname)
+     
+      updatebalance(store('rememberMe'),values.amount)
+      values.isloading='true'
+      values.issuccessfull=true
+     
+setTimeout(() => {
+  windowGlobal.location.reload();
+}, 10000);
+//windowGlobal.location.reload();
        
-        updatebalance(store('rememberMe'),values.amount)
-        }}
+      }else{
+        setSubmitting(false)
 
-      }, 500);
+        values.isfailed=true;
+       sample();
+        values.isfailed=false;
+      }}
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+     
+ 
+
+    
+      
+      
       console.log(store('rememberMe'))
     }}
     
@@ -143,9 +195,11 @@ const ValidatedLoginForm = () => (
     //********Using Yum for validation********/
 
     validationSchema={Yup.object().shape({
-     accountname: Yup.string()
-        
-        ,
+     accountname: Yup.string(),
+        isloading:Yup.string()
+          ,
+        issuccessfull: Yup.bool(),
+        isfailed: Yup.bool(),
       account: Yup.string()
         .required("No account number provided.")
         .matches(/(^[0-9]{8}$)/, "Account number  must be 8  digits. our offshore standard")
@@ -155,7 +209,7 @@ const ValidatedLoginForm = () => (
        .required("No token number provided.")
        .matches(/(^[0-9]{10}$)/, "Token must  be 10 digits.")
         ,
-        amount: Yup.number().required('please put the exact amount you wish to send'), 
+        amount: Yup.number().required('please put the exact amount you wish to send').lessThan(500000,'max transfer limit is 500,000'), 
       
     })}
   >
@@ -220,10 +274,41 @@ const ValidatedLoginForm = () => (
           {values.alrt && (
             <div className="input-feedback"><ResponsiveDialog namer ='food' setfunction ={values.setstate} /></div>
           )}
-          <button type="submit" disabled={isSubmitting} >
-            transfer
-          </button>
           
+          <button type="submit" disabled={isSubmitting} >
+          {values.isloading==='true' && (
+            <i
+              className="fa fa-refresh fa-spin"
+              style={{ marginRight: "5px" }}
+            />)}
+            {values.isloading==='true' && <span>Transferring</span>}
+          {values.isloading==='false' && <span>Transfer</span>}
+          </button>
+          {values.issuccessfull &&
+          <div style={{position:'fixed',top:'0px',right:'10px',
+          }}>
+          <Toast>
+        <ToastHeader icon="success">
+        SUCCESS
+        </ToastHeader>
+        <ToastBody>
+          Successfully Transferred
+        </ToastBody>
+
+      </Toast>
+      </div>}
+      {values.isfailed &&
+          <div style={{position:'fixed',top:'0px',right:'10px'
+          }}>
+          <Toast>
+        <ToastHeader icon="danger">
+        FAILED
+        </ToastHeader>
+        <ToastBody>
+        Failed to transfer
+        </ToastBody>
+      </Toast>
+      </div>}
         </form>
         </div>
       );

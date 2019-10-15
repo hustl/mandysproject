@@ -6,7 +6,10 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head><script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" />
-
+      <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+    />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta

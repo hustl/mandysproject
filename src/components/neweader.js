@@ -40,11 +40,12 @@ export default function Header() {
         unmountOnExit
       >
         <nav className="Nav">
-          <Link  to="/">Home</Link>
-          <Link  to="/services">Initiatives</Link>
+          <Link  to="/">Home</Link> 
           <Link  to="/about">About</Link>
           <Link  to="/login">Account login</Link>
-          
+          <Link  to="/services">CONTACT Us</Link>
+  
+         
         </nav>
       </CSSTransition>
       <img onClick={toggleNav} className="Burger" src={ic}/>

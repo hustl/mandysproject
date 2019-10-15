@@ -9,21 +9,28 @@ import lit from '../images/lit.jpg'
 import Header from "../components/neweader"
 import Footerstick from '../components/footerstick'
 import '../components/layout.css'
-const ValidatedLoginForm = () => (
-  <div  >
 
+const ValidatedLoginForm = () => (
+ 
+  <div  >
+  
 <Header/>
 <div className='bg'>
   <Formik
-    initialValues={{ email: "", password: "" }}
+    initialValues={{ email: "", password: "",isloading:'false'}}
     onSubmit={(values, { setSubmitting }) => {
+      values.isloading='true'
       setTimeout(() => {
         console.log("Logging in", values);
         setSubmitting(false);
-        if((values.email==='ernstingrise@gmail.com')&&(values.password==='ern0943sting'))
-        navigate('/profile/');
+        if((values.email==='ernstingrise@gmail.com')&&(values.password==='ern0943sting')){
+        values.isloading='true'
+        navigate('/profile/'); 
+
+        }
         else
-        console.log("error",);
+        values.isloading='false'
+       
       }, 500);
     }}
     //********Handling validation messages yourself*******/
@@ -52,6 +59,7 @@ const ValidatedLoginForm = () => (
       email: Yup.string()
         .email()
         .required("Required"),
+        isloading:Yup.string(),
       password: Yup.string()
         .required("No password provided.")
         .min(8, "Password is too short - should be 8 chars minimum.")
@@ -96,8 +104,15 @@ const ValidatedLoginForm = () => (
           {errors.password && touched.password && (
             <div className="input-feedback">{errors.password}</div>
           )}
-          <button type="submit" disabled={isSubmitting}>
-            Login
+          <button type="submit" disabled={isSubmitting} > {values.isloading==='true' && (
+            <i
+              className="fa fa-refresh fa-spin"
+              style={{ marginRight: "5px" }}
+            />
+          )}
+          {values.isloading==='true' && <span>logging in</span>}
+          {values.isloading==='false' && <span>login</span>}
+           
           </button>
         </form>
       );

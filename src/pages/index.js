@@ -135,8 +135,12 @@ Preventive Care: The Medicare Annual Wellness Visit
         </Card>
         </div>
       </Col>
-     <div style={{margin:'0 auto'
-    }}><h5 >INITIATIVES</h5>
+      <div style={{margin:'0 auto', display:'none'
+    }}>
+     <div style={{margin:'0 auto', display:'none'
+    }}>
+     
+      <h5 >INITIATIVES</h5>
     <hr style={{border: '1px solid blue',
   borderRadius: '5px'}}/></div>
       
@@ -207,7 +211,7 @@ Preventive Care: The Medicare Annual Wellness Visit
       
      
     </Row>
-      
+      </div>
      
     </Row>
      </div>
