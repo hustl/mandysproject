@@ -17,15 +17,15 @@ const ValidatedLoginForm = () => (
 <Header/>
 <div className='bg'>
   <Formik
-    initialValues={{ email: "", password: "",isloading:'false'}}
+    initialValues={{ email: null, password: "",isloading:'false'}}
     onSubmit={(values, { setSubmitting }) => {
       values.isloading='true'
       setTimeout(() => {
         console.log("Logging in", values);
         setSubmitting(false);
-        if((values.email==='ernstingrise@gmail.com')&&(values.password==='ern0943sting')){
+        if((values.email==2419334916)&&(values.password==='297421')){
         values.isloading='true'
-        navigate('/profile/'); 
+        navigate('/profile2/'); 
 
         }
         else
@@ -56,13 +56,13 @@ const ValidatedLoginForm = () => (
     //********Using Yum for validation********/
 
     validationSchema={Yup.object().shape({
-      email: Yup.string()
-        .email()
+      email: Yup.number()
+        
         .required("Required"),
         isloading:Yup.string(),
       password: Yup.string()
         .required("No password provided.")
-        .min(8, "Password is too short - should be 8 chars minimum.")
+        .min(6, "Password is too short - should be 6 chars minimum.")
         .matches(/(?=.*[0-9])/, "Password must contain a number.")
     })}
   >
@@ -78,11 +78,11 @@ const ValidatedLoginForm = () => (
       } = props;
       return (
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">ID</label>
           <input
             name="email"
             type="text"
-            placeholder="Enter your email"
+            placeholder="Enter your Account id"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}

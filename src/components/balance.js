@@ -24,14 +24,11 @@ export default function balance() {
     const { balanc } = useDataFetcher()
 
   return (
-    <div style ={{display:'flex', 
-   
-    textAlign: 'center',
-    alignItems: 'center',
-    color: 'aliceblue',
+    <div style ={{
+    textcolor: 'black',
     fontFamily: 'Courier New, Courier, monospace',
     fontSize: '20px',
-    fontWeight: 'bold'}}>Account Balance  :
+    fontWeight: 'bold'}}>
       <CurrencyFormat value={balanc.data} displayType={'text'} thousandSeparator={true} prefix={'$'} renderText={value => <div>{value}</div>} /> {'\t'}USD
     </div>
   );

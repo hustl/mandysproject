@@ -62,14 +62,7 @@ h1 {
     background-position: center;
     margin: 0 auto;
   }
-  button {
-    padding: 15px 15px;
-    background-color: rgb(70, 153, 179);
-    color: white;
-    border: 1px solid rgb(70, 153, 179);
-    background-color: 250ms;
-    margin: 0 auto;
-  }
+  
   .bgimage{
   margin: 0 auto;
    
@@ -78,10 +71,5 @@ h1 {
     overflow-x:hidden;
 }
   
-  button:hover {
-    cursor: pointer;
-    background-color: white;
-    color: rgb(70, 153, 179);
-    
-  }
+  
   
