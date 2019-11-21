@@ -12,7 +12,7 @@ import Footerstick from '../components/footerstick'
 import  {Tab,Tabs} from 'react-bootstrap'
 import Link from "gatsby-link"
 import ci from '../images/ci.jpg'
-
+var store = require('store2')
 const BASE_URL = "https://mandy-25207.firebaseio.com/.json";
 
 function getd(){
@@ -105,8 +105,8 @@ setShowingtrans2('block');}}>Transaction History</button></li>
 
 </div>
         <div  className='profile2 profilemust'>
-          <div className ='nameb'>You are Logged in as Ernsting P.</div>
-          <img src= {ci} style ={{maxHeight:'250px',maxWidth:'200px',paddingBottom:'10px',paddingTop:'5px'}} />
+<div className ='nameb'>{store ('currentuser')}</div>
+          <img src='https://imgur.com/BEKbXkU' style ={{maxHeight:'250px',maxWidth:'200px',paddingBottom:'10px',paddingTop:'5px'}} />
         </div>
         
 
@@ -123,7 +123,7 @@ setShowingtrans2('block');}}>Transaction History</button></li>
         }}>
   <tr  className ='profile2'>
     <th  className ='profile2'>Name</th>
-    <td  className ='profile2' >Ernsting P. Braw</td>
+      <td  className ='profile2' >{store('currentuser')}</td>
   </tr>
   <tr  className ='profile2'>
     <th  className ='profile2'>Telephone</th>

@@ -10,8 +10,9 @@ import Header from "../components/neweader"
 import Footerstick from '../components/footerstick'
 import '../components/layout.css'
 
+
 const ValidatedLoginForm = () => (
- 
+  
   <div  >
   
 <Header/>
