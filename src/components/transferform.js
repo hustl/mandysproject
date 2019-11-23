@@ -38,11 +38,12 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 var dateTime = date+' '+time;
 return date;
 }
+
 const updatebalance = async (currentamount,deducter) =>{
  try{
    const newbalance= parseFloat(currentamount)-parseFloat(deducter)
   
-    let result= await fetch( 'https://kui-app.firebaseio.com/.json',{
+    let result= await fetch( 'https://balance-711d5.firebaseio.com/.json',{
       method:'put',
       
      
@@ -68,7 +69,7 @@ const updatebalance = async (currentamount,deducter) =>{
 }
  const postdata = async (amount,fullname) =>{
   try{
-    let result= await fetch( "https://mandy-25207.firebaseio.com/.json",{
+    let result= await fetch( "https://transact-80470.firebaseio.com/.json",{
       method:'post',
       mode:'no-cors',
       headers:{
@@ -121,16 +122,14 @@ const ValidatedLoginForm = () => (
       if (window.confirm('Are you sure you wish to send ' +values.amount +' USD to \n '+values.account +'\n '+ fullname
       )){
         values.isloading='true'
-     
+        values.isloading='true'
+        values.issuccessfull=true
       postdata(values.amount,fullname)
      
       updatebalance(store('rememberMe'),values.amount)
-      values.isloading='true'
-      values.issuccessfull=true
+      
      
-setTimeout(() => {
-  windowGlobal.location.reload();
-}, 10000);
+
 //windowGlobal.location.reload();
        
       }else{
@@ -139,7 +138,12 @@ setTimeout(() => {
         values.isfailed=true;
        sample();
         values.isfailed=false;
-      }}
+      }
+    
+      setTimeout(() => {
+        windowGlobal.location.reload();
+        //navigate('/profile2')
+       }, 20000);}
       
 
 

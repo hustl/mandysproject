@@ -12,8 +12,9 @@ import Footerstick from '../components/footerstick'
 import  {Tab,Tabs} from 'react-bootstrap'
 import Link from "gatsby-link"
 import ci from '../images/ci.jpg'
+import { navigate } from "gatsby"
 var store = require('store2')
-const BASE_URL = "https://mandy-25207.firebaseio.com/.json";
+const BASE_URL = "https://transact-80470.firebaseio.com/.json";
 
 function getd(){
     var today = new Date();
@@ -70,7 +71,7 @@ export default function profile2() {
   
     if (isLoading) {
   
-      return <><Header/> <p>Loading posts...</p>
+      return <><Header/> <p>Loading ...</p>
       </>
     }
     return (
@@ -85,7 +86,7 @@ export default function profile2() {
 
 <ul>
 
-<li><button>Home</button></li>
+
 
 <li><button onClick ={()=>{setShowingtrans('block');
 setShowingtrans3('none');
@@ -98,15 +99,16 @@ setShowingtrans2('none');}}>Account Details</button></li>
 <li><button onClick ={()=>{setShowingtrans('none');
 setShowingtrans3('none');
 setShowingtrans2('block');}}>Transaction History</button></li>
-
-<li><Link to="/login/">LOG OUT</Link></li>
+<li><button onClick ={()=>{navigate('/transferpage/'); ;
+}}>Make Transfer</button></li>
+<li><Link to="/llongin2/">LOG OUT</Link></li>
 
 </ul>
 
 </div>
         <div  className='profile2 profilemust'>
 <div className ='nameb'>{store ('currentuser')}</div>
-          <img src='https://imgur.com/BEKbXkU' style ={{maxHeight:'250px',maxWidth:'200px',paddingBottom:'10px',paddingTop:'5px'}} />
+          <img src={store('pic')} style ={{maxHeight:'250px',maxWidth:'200px',paddingBottom:'10px',paddingTop:'5px'}} />
         </div>
         
 
@@ -131,7 +133,7 @@ setShowingtrans2('block');}}>Transaction History</button></li>
   </tr>
   <tr  className ='profile2'>
     <th  className ='profile2'>Current City</th>
-    <td  className ='profile2'>Pennsylvania</td>
+    <td  className ='profile2'>{store('address')}</td>
   </tr>
   <tr  className ='profile2'>
     <th  className ='profile2'>Nationality</th>
@@ -147,7 +149,7 @@ setShowingtrans2('block');}}>Transaction History</button></li>
         }} >
   <tr  className ='profile2'>
     <th  className ='profile2'>Gender</th>
-    <td  className ='profile2'>Male</td>
+    <td  className ='profile2'>{store('gender')}</td>
   </tr>
   <tr  className ='profile2'>
     <th  className ='profile2'>Identification</th>
@@ -155,7 +157,7 @@ setShowingtrans2('block');}}>Transaction History</button></li>
   </tr>
   <tr>
     <th  className ='profile2'>Email</th>
-    <td  className ='profile2'>ernstingpete3352@gmail.com
+    <td  className ='profile2'>{store('email')}
 </td>
   </tr>
  
@@ -244,6 +246,7 @@ setShowingtrans2('block');}}>Transaction History</button></li>
       </div>
         </div>
         </div>
+        
          <Footerstick/>
          </>
     )

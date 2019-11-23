@@ -5,7 +5,7 @@ const windowGlobal = typeof window !== 'undefined' && window
 function useDataFetcher() {
     const [balanc,setbalance]= React.useState({})
     React.useEffect(() => {
-        fetch('https://kui-app.firebaseio.com/balance/.json')
+        fetch('https://balance-711d5.firebaseio.com/balance.json')
         
       .then(response => response.json())
       .then(data => setbalance({ data }));
